@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Personal - Combustivel</title>
+</h:head>
+
+<h:body>
+	<div id="header" style="text-align: center">
+		<h1>Controle Pessoal - Combustivel</h1>
+	</div>
+
+	<h:link value="Página Inicial" outcome="pagina-inicial" /> -
+      	<h:link value="Controle de Consumo" outcome="controle-consumo" /> -
+      	<h:link value="Lista Postos" outcome="lista-posto" /> -
+      	<h:link value="Relatórios" outcome="relatorio" />
+      	<h:link valu="Câmbio" outcome="cambio" />
+
+	<ui:insert name="corpo-pagina"> Espaço para o conteúdo da tela</ui:insert>
+
+	<div id="footer" style="text-align: center">
+		<hr />
+		&copy; 2018 Refúgio dos Amigos. Todos os direitos reservados
+	</div>
+
+</h:body>
+
+</html>
