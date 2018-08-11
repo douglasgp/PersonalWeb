@@ -23,8 +23,8 @@ public class TestRemoveFuel {
 			fuelBean.remove(fuel);
 
 			JOptionPane.showMessageDialog(null, "Registry successfully removed!");
-		}else {
-			JOptionPane.showMessageDialog(null,"Registry not removed!");
+		} else {
+			JOptionPane.showMessageDialog(null, "Registry not removed!");
 		}
 
 	}

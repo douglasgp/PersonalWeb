@@ -1,4 +1,5 @@
 package br.com.personal.controle;
+
 // They make bread they work at night and they sleep in the afternoon
 import java.sql.Connection;
 import java.sql.Date;
@@ -47,14 +48,14 @@ public class FuelBean {
 			throw new RuntimeException(e);
 		}
 	}
-	
-	public List<Fuel> getList(){
+
+	public List<Fuel> getList() {
 		try {
 			List<Fuel> fuels = new ArrayList<Fuel>();
 			PreparedStatement stmt = this.con.prepareStatement("SELECT * FROM tb_fuel");
 			ResultSet rs = stmt.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				Fuel fuel = new Fuel();
 				fuel.setId(rs.getLong("id"));
 				fuel.setValueLiter(rs.getDouble("valueLiter"));
@@ -63,28 +64,28 @@ public class FuelBean {
 				fuel.setKmTraveled(rs.getDouble("kmTraveled"));
 				fuel.setTotalLiters(rs.getDouble("totalLiters"));
 				fuel.setLevelReservoir(rs.getString("levelReservoir"));
-				
+
 				Calendar data = Calendar.getInstance();
 				data.setTime(rs.getDate("dateSupplies"));
 				fuel.setDateSupplies(data);
-				
+
 				fuels.add(fuel);
 			}
 			rs.close();
 			stmt.close();
 			return fuels;
-			
+
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-	public void update(Fuel fuel) {	
+	public void update(Fuel fuel) {
 		String sql = "UPDATE tb_fuel SET valueLiter=?, amount=?, currentKm=?, kmTraveled=?, totalLiters=?, levelReservoir=?, dateSupplies=?"
 				+ "WHERE id=?";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
-			stmt.setDouble(1,  fuel.getValueLiter());
+			stmt.setDouble(1, fuel.getValueLiter());
 			stmt.setDouble(2, fuel.getAmount());
 			stmt.setInt(3, fuel.getCurrentKm());
 			stmt.setDouble(4, fuel.getKmTraveled());
@@ -94,12 +95,12 @@ public class FuelBean {
 			stmt.setLong(8, fuel.getId());
 			stmt.executeUpdate();
 			stmt.close();
-			
+
 		} catch (SQLException e) {
 			throw new RuntimeException("Erro ao alterar" + e);
 		}
 	}
-	
+
 	public void remove(Fuel fuel) {
 		String sql = "DELETE FROM tb_fuel WHERE id=?";
 		try {

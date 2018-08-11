@@ -15,14 +15,10 @@ public class TestListUser {
 		List<User> users = userBean.getLista();
 
 		for (User user : users) {
-			JOptionPane.showMessageDialog(null, "= = = = Registered User = = = =\n"
-					+ "\nId: " + user.getId()
-					+ "\nName: " + user.getName()
-					+ "\nTelephone: " + user.getTelephone()
-					+ "\nLogin: " + user.getLogin()
-					+ "\nProfile: " + user.getProfile()
-					+ "\nEmail: " + user.getEmail() 
-					 + "\n");
+			JOptionPane.showMessageDialog(null,
+					"= = = = Registered User = = = =\n" + "\nId: " + user.getId() + "\nName: " + user.getName()
+							+ "\nTelephone: " + user.getTelephone() + "\nLogin: " + user.getLogin() + "\nProfile: "
+							+ user.getProfile() + "\nEmail: " + user.getEmail() + "\n");
 		}
 
 	}

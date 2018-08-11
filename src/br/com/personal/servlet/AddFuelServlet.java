@@ -1,4 +1,5 @@
 package br.com.personal.servlet;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -20,13 +21,13 @@ import br.com.personal.modelo.Fuel;
 public class AddFuelServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
-		throws IOException, ServletException{
-		
+			throws IOException, ServletException {
+
 		// search writer
 		PrintWriter out = response.getWriter();
-		
+
 		// Searching for the arameters in the request
-		String stringValueLiter= request.getParameter("valueLiter");
+		String stringValueLiter = request.getParameter("valueLiter");
 		Double valueLiter = Double.parseDouble(stringValueLiter.trim()); // Converter String em Double
 		String stringAmount = request.getParameter("amount");
 		Double amount = Double.parseDouble(stringAmount.trim());
@@ -39,7 +40,7 @@ public class AddFuelServlet extends HttpServlet {
 		String levelReservoir = request.getParameter("levelReservoir");
 		String dateInText = request.getParameter("dateSupplies");
 		Calendar dateSupplies = null;
-		
+
 		// Date conversion
 		try {
 			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dateInText);
@@ -49,7 +50,7 @@ public class AddFuelServlet extends HttpServlet {
 			out.println("Date conversion error");
 			return;// Stop the execution of the method
 		}
-		
+
 		// Mount a fuel object
 		Fuel fuel = new Fuel();
 		fuel.setValueLiter(valueLiter);
@@ -59,7 +60,7 @@ public class AddFuelServlet extends HttpServlet {
 		fuel.setTotalLiters(totalLiters);
 		fuel.setLevelReservoir(levelReservoir);
 		fuel.setDateSupplies(dateSupplies);
-		
+
 		// Saves fuel
 		FuelBean fuelBean = new FuelBean();
 		try {
@@ -68,15 +69,14 @@ public class AddFuelServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
 		// Prints the feed that was added
 		out.println("<html>");
 		out.println("<body>");
 		out.println("<h2>Supply the date" + fuel.getDateSupplies() + " added successfully!</h2>");
 		out.println("</body>");
 		out.println("</html>");
-		
+
 	}
 
 }

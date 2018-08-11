@@ -18,7 +18,7 @@ public class TestAddUser {
 
 		UserBean userBean = new UserBean();
 		userBean.addUser(user);
-		
+
 		User user2 = new User();
 		user2.setName("Douglas Galdino Pereira");
 		user2.setTelephone("+55 11 97660-1947");
@@ -29,7 +29,7 @@ public class TestAddUser {
 
 		UserBean userBean2 = new UserBean();
 		userBean2.addUser(user2);
-		
+
 		User user3 = new User();
 		user3.setName("Manuel Oliveira");
 		user3.setTelephone("+55 11 95568-3582");
@@ -40,7 +40,7 @@ public class TestAddUser {
 
 		UserBean userBean3 = new UserBean();
 		userBean3.addUser(user3);
-		
+
 		User user4 = new User();
 		user4.setName("Carla Alessandra Moreira");
 		user4.setTelephone("11 98865-3799");
@@ -51,7 +51,7 @@ public class TestAddUser {
 
 		UserBean userBean4 = new UserBean();
 		userBean4.addUser(user4);
-		
+
 		User user5 = new User();
 		user5.setName("Cristopher Veloso");
 		user5.setTelephone("+55 11 99589-3287");

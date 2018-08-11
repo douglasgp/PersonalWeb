@@ -26,7 +26,7 @@ public class AddUserServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String profile = request.getParameter("profile");
 		String email = request.getParameter("email");
-		
+
 		User user = new User();
 		user.setName(name);
 		user.setTelephone(telephone);

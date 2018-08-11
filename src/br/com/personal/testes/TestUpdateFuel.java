@@ -9,10 +9,10 @@ import br.com.personal.modelo.Fuel;
 
 public class TestUpdateFuel {
 	public static void main(String[] args) {
-		
+
 		String value = JOptionPane.showInputDialog("Enter the ID to change a record: ");
 		Long idFuel = Long.parseLong(value.trim());
-		
+
 		Fuel fuel = new Fuel();
 		fuel.setValueLiter(4.179);
 		fuel.setAmount(20.0);
@@ -22,10 +22,10 @@ public class TestUpdateFuel {
 		fuel.setLevelReservoir("");
 		fuel.setDateSupplies(Calendar.getInstance());
 		fuel.setId(idFuel);
-		
+
 		FuelBean fuelBean = new FuelBean();
 		fuelBean.update(fuel);
-		
+
 		JOptionPane.showMessageDialog(null, "Registry changed successfully!");
 	}
 

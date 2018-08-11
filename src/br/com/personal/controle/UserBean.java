@@ -67,8 +67,7 @@ public class UserBean {
 	}
 
 	public void update(User user) {
-		String sql = "UPDATE tb_user SET name=?, telephone=?, login=?, password=?, profile=?, email=?" 
-					+ "WHERE id=?";
+		String sql = "UPDATE tb_user SET name=?, telephone=?, login=?, password=?, profile=?, email=?" + "WHERE id=?";
 
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
