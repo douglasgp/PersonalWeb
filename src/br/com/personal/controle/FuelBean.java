@@ -1,6 +1,5 @@
 package br.com.personal.controle;
 
-// They make bread they work at night and they sleep in the afternoon
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -9,8 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import javax.swing.JOptionPane;
 
 import br.com.personal.jdbc.ConnectionFactory;
 import br.com.personal.modelo.Fuel;
@@ -39,11 +36,9 @@ public class FuelBean {
 			stmt.setDouble(5, fuel.getTotalLiters());
 			stmt.setString(6, fuel.getLevelReservoir());
 			stmt.setDate(7, new Date(fuel.getDateSupplies().getTimeInMillis()));
-
+			
 			stmt.execute();
 			stmt.close();
-
-			JOptionPane.showMessageDialog(null, "Recorded Successfully");
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

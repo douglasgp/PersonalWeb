@@ -18,8 +18,8 @@ public class UserBean {
 	}
 
 	public void addUser(User user) {
-
-		String sql = "INSERT INTO tb_user" + "(name, telephone, login, password, profile, email)"
+		String sql = "INSERT INTO tb_user" 
+				+ "(name, telephone, login, password, profile, email)"
 				+ " values (?,?,?,MD5(?),?,?)";
 
 		try {

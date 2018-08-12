@@ -38,18 +38,17 @@ public class AddFuelServlet extends HttpServlet {
 		String stringTotalLiters = request.getParameter("totalLiters");
 		Double totalLiters = Double.parseDouble(stringTotalLiters);
 		String levelReservoir = request.getParameter("levelReservoir");
-		String dateInText = request.getParameter("dateSupplies");
-		Calendar dateSupplies = null;
-
-		// Date conversion
-		try {
+		//String dateInText = request.getParameter("dateSupplies");
+		//Calendar dateSupplies = null;
+		
+		/*try {
 			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dateInText);
 			dateSupplies = Calendar.getInstance();
 			dateSupplies.setTime(date);
 		} catch (ParseException e) {
-			out.println("Date conversion error");
+			out.println("Erro de conversão de datas");
 			return;// Stop the execution of the method
-		}
+		}*/
 
 		// Mount a fuel object
 		Fuel fuel = new Fuel();
@@ -59,9 +58,9 @@ public class AddFuelServlet extends HttpServlet {
 		fuel.setKmTraveled(kmTraveled);
 		fuel.setTotalLiters(totalLiters);
 		fuel.setLevelReservoir(levelReservoir);
-		fuel.setDateSupplies(dateSupplies);
-
-		// Saves fuel
+		fuel.setDateSupplies(Calendar.getInstance());
+		
+		//Saves fuel
 		FuelBean fuelBean = new FuelBean();
 		try {
 			fuelBean.addFuel(fuel);
@@ -77,6 +76,11 @@ public class AddFuelServlet extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");
 
+	}
+
+	private Calendar Calendar(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
