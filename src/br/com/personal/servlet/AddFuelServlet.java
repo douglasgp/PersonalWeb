@@ -77,7 +77,7 @@ public class AddFuelServlet extends HttpServlet {
 		// Prints the feed that was added
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<h2>Supply the date" + fuel.getDateSupplies() + " added successfully!</h2>");
+		out.println("<h2>Registro de abastecimento da data " + fuel.getDateSupplies().getTime() + "\n adicionado com sucesso!</h2>");
 		out.println("</body>");
 		out.println("</html>");
 
