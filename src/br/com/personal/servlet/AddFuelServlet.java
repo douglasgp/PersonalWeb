@@ -29,14 +29,19 @@ public class AddFuelServlet extends HttpServlet {
 		// Searching for the arameters in the request
 		String stringValueLiter = request.getParameter("valueLiter");
 		Double valueLiter = Double.parseDouble(stringValueLiter.trim()); // Converter String em Double
+		
 		String stringAmount = request.getParameter("amount");
 		Double amount = Double.parseDouble(stringAmount.trim());
+		
 		String stringCurrentKm = request.getParameter("currentKm");
 		Integer currentKm = Integer.parseInt(stringCurrentKm.trim());
+		
 		String stringKmTraveled = request.getParameter("kmTraveled");
 		Double kmTraveled = Double.parseDouble(stringKmTraveled.trim());
+		
 		String stringTotalLiters = request.getParameter("totalLiters");
 		Double totalLiters = Double.parseDouble(stringTotalLiters);
+		
 		String levelReservoir = request.getParameter("levelReservoir");
 		//String dateInText = request.getParameter("dateSupplies");
 		//Calendar dateSupplies = null;
