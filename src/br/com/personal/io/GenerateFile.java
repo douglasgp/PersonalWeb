@@ -19,6 +19,7 @@ public class GenerateFile {
 		// Encapsulamento de POO
 		fuel.setDateSupplies(data);
 		
+		// Soli
 		System.out.println("Data informada: " + fuel.getDateSupplies());
 
 	}
