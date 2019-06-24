@@ -7,6 +7,10 @@ import java.util.Calendar;
 public class Fuel {
 
 	private Long id;
+	
+	private int ccf;
+	
+	private String typeFuel;
 
 	private double valueLiter; // Valor por litro
 
@@ -28,6 +32,22 @@ public class Fuel {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public int getCcf() {
+		return ccf;
+	}
+	
+	public void setCcf(int ccf) {
+		this.ccf = ccf;
+	}
+	
+	public String getTypeFuel() {
+		return typeFuel;
+	}
+	
+	public void setTypeFuel(String typeFuel) {
+		this.typeFuel = typeFuel;
 	}
 
 	public double getValueLiter() {
