@@ -2,14 +2,10 @@ package br.com.personal.io;
 
 public class ManagerIo {
 	public static int VALOR = 0;
-	private static String typeFuel[] = new String[VALOR];
+	public static String typeFuel[] = new String[VALOR];
 	
 	public static String verificaTipoCombustivel(int tipoComb) {
 		String typeFuel = null;
-		
-		for (int i = 0; i < typeFuel.length(); i++) {
-			
-		}
 		
 		if(tipoComb == 1) {
 			typeFuel = "Gasolina";
