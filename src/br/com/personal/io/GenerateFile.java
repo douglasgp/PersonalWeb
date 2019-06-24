@@ -9,7 +9,7 @@ public class GenerateFile {
 	public static int TOTAL_CAMPOS = 8;
 	public static String tipoStrCombustivel;
 	public static int tipoCombustivel = 0;
-	private static String typeFuel[] = new String[tipoCombustivel];
+	public static String typeFuel[] = new String[tipoCombustivel];
 
 	public static Scanner scan = new Scanner(System.in);
 
@@ -30,6 +30,7 @@ public class GenerateFile {
 		// Solicita mais um tipo de combustível, se houver
 		// Solicita TIPO de combustível
 		int valor = 0;
+		int contador = 0;
 		do {
 			System.out.println("Tipo combustível: ");
 			System.out.println("1. Gasolina\n"
@@ -43,10 +44,10 @@ public class GenerateFile {
 			
 			// Invoca método de verificação para o tipo de combustível retornando uma String
 			// tipoStrCombustivel = opManager.verificaTipoCombustivel(tipoCombustivel);
-			typeFuel[CONT] = opManager.verificaTipoCombustivel(CONT);
+			typeFuel[contador] = ManagerIo.verificaTipoCombustivel(CONT);
 			
 			// tipoCombustivel = scan.nextInt();
-			CONT++;
+			contador++;
 		} while (valor != 0);
 		ManagerIo.verificaTipoCombustivel(tipoCombustivel);
 		
@@ -57,8 +58,8 @@ public class GenerateFile {
 		
 		System.out.println("Data informada: " + fuel.getDateSupplies());
 		System.out.println("CCF: " + fuel.getCcf());
-		for (int i = 0; i < CONT; i++) {
-			System.out.println("Tipo combustível: " + tipoStrCombustivel);
+		for (int i = 0; i < contador; i++) {
+			System.out.println("Combustível: " + typeFuel[i]);
 			
 		}
 		
