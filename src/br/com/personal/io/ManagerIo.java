@@ -4,48 +4,36 @@ import java.util.Scanner;
 
 public class ManagerIo {
 	public static Scanner scan = new Scanner(System.in);
-	public static int VALOR = 0;
+	public static int VALOR = 6;
 	public static int CONT = 0;
 	public static String[] typeFuel = new String[VALOR];
-	public static int valorFuel[]= new int[VALOR];
+	public static double valueFuel[]= new double[VALOR];
 	
-	public static String verificaTipoCombustivel(int tipoComb) {
-		System.out.println("Tipo combustível: ");
-		System.out.println("1. Gasolina\n"
-				+ "2. Gasolina Aditivada\n"
-				+ "3. Etanol\n"
-				+ "4. Etanol Aditivado\n"
-				+ "5. Diesel\n"
-				+ "6. Outros\n"
-				+ "9. Sair");
-		tipoComb = scan.nextInt();
-		
-		if(tipoComb == 1) {
-			GenerateFile.typeFuel[CONT] = "Gasolina";
-			System.out.println("Combustível: " + GenerateFile.typeFuel[CONT]+"\n"
-					+ "Valor: ");
-			GenerateFile.valorTypeFuel[CONT] = scan.nextDouble();
+	public static String verificaTipoCombustivel(int valor) {
+		String fuelStr = null;
+		if(valor == 1) {
+			fuelStr = "Gasolina";
 			CONT++;
-		}else if(tipoComb == 2) {
-			GenerateFile.typeFuel[CONT] = "Gasolina Aditivada";
+		}else if(valor == 2) {
+			fuelStr = "Gasolina Aditivada";
 			CONT++;
-		}else if(tipoComb == 3) {
-			GenerateFile.typeFuel[CONT] = "Etanol Comum";
+		}else if(valor == 3) {
+			fuelStr = "Etanol Comum";
 			CONT++;
-		}else if(tipoComb == 4) {
-			GenerateFile.typeFuel[CONT] = "Etanol Aditivado";
+		}else if(valor == 4) {
+			fuelStr = "Etanol Aditivado";
 			CONT++;
-		}else if(tipoComb == 5) {
-			GenerateFile.typeFuel[CONT] = "Diesel";
+		}else if(valor == 5) {
+			fuelStr = "Diesel";
 			CONT++;
-		}else if(tipoComb == 6) {
-			GenerateFile.typeFuel[CONT] = "Outros";
+		}else if(valor == 6) {
+			fuelStr = "Outros";
 			CONT++;
 		}else {
 			System.out.println("Opção inválida!");
 			System.exit(0);
 		}
-		return typeFuel[CONT];
+		return fuelStr;
 	}
 	
 	public static void registraPrecoCombustivel() {
@@ -55,8 +43,18 @@ public class ManagerIo {
 		
 	}
 	
-	public static void escolheCombustivel() {
+	public static int escolheCombustivel(int valor) {
+		// int valor = 0;
+		System.out.println("Tipo combustível: ");
+		System.out.println("1. Gasolina\n"
+				+ "2. Gasolina Aditivada\n"
+				+ "3. Etanol\n"
+				+ "4. Etanol Aditivado\n"
+				+ "5. Diesel\n"
+				+ "6. Outros\n"
+				+ "9. Sair");
+		valor = scan.nextInt();
 		
-		
+		return valor;
 	}
 }
