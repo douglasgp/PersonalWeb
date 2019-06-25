@@ -5,14 +5,15 @@ import java.util.Scanner;
 import br.com.personal.io.ManagerIo;
 
 public class GenerateFile {
-	public static int CONT;
+	public static int QTD_COMBUSTIVEL = 6;
+	public static int CONT = 0;
 	public static int TOTAL_CAMPOS = 8;
 	public static String tipoStrCombustivel;
 	public static int tipoCombustivel = 0;
 	
-	public static int vetorTypeFuel[] = new int[CONT];
-	public static String typeFuel[] = new String[CONT];
-	public static double valorTypeFuel[] = new double[CONT];
+	public static int vetorTypeFuel[] = new int[QTD_COMBUSTIVEL];
+	public static String typeFuel[] = new String[QTD_COMBUSTIVEL];
+	public static double valorTypeFuel[] = new double[QTD_COMBUSTIVEL];
 
 	public static Scanner scan = new Scanner(System.in);
 
@@ -36,12 +37,18 @@ public class GenerateFile {
 			System.out.println("Adicionar Combustível?");
 			System.out.println("1. Sim\n"
 					+ "2. Não\n");
-			int valor = scan.nextInt();
-			if(valor == 1) {
-				tipoStrCombustivel = ManagerIo.verificaTipoCombustivel(valor);
+			opcao = scan.nextInt();
+			if(opcao == 1) {
+				tipoCombustivel = ManagerIo.escolheCombustivel(opcao);
+				vetorTypeFuel[CONT] = tipoCombustivel;
+				System.out.println("Você escolheu: " + vetorTypeFuel[CONT]);
 				CONT++;
 			}
 		} while (opcao != 2);
+		for (int i = 0; i < vetorTypeFuel.length; i++) {
+			typeFuel[i] = ManagerIo.verificaTipoCombustivel(vetorTypeFuel[i]);
+			System.out.println("Combustível: " + typeFuel[i]);
+		}
 		
 		// ManagerIo.verificaTipoCombustivel(tipoCombustivel);
 		
@@ -53,8 +60,9 @@ public class GenerateFile {
 		System.out.println("Data informada: " + fuel.getDateSupplies());
 		System.out.println("CCF: " + fuel.getCcf());
 		for (int i = 0; i < CONT; i++) {
+			System.out.println("Código: " + vetorTypeFuel[i]);
 			System.out.println("Combustível: " + typeFuel[i]);
-			System.out.println("Valor: " + valorTypeFuel[i]);
+			// System.out.println("Valor: " + valorTypeFuel[i]);
 		}
 		
 	}
