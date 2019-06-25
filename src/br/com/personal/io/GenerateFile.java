@@ -34,21 +34,26 @@ public class GenerateFile {
 		// Estrutura para adicionar um ou mais tipo/valor de combustível
 		int opcao = 0;
 		do {
+			// Menu de opção para inserir informações de combustível
 			System.out.println("Adicionar Combustível?");
 			System.out.println("1. Sim\n"
 					+ "2. Não\n");
 			opcao = scan.nextInt();
 			if(opcao == 1) {
-				tipoCombustivel = ManagerIo.escolheCombustivel(opcao);
-				vetorTypeFuel[CONT] = tipoCombustivel;
-				System.out.println("Você escolheu: " + vetorTypeFuel[CONT]);
+				// Armazena numa posição do vetor, o código retornado pelo método
+				vetorTypeFuel[CONT] = ManagerIo.escolheCombustivel(opcao);
+				// Armazena numa posição do vetor nome do combustível retornado pelo método
+				// Envio de parâmetro INT e retorno de parâmetro STRING
+				typeFuel[CONT] = ManagerIo.verificaTipoCombustivel(vetorTypeFuel[CONT]);
+				// contador soma +1 para ser utilizado pelo vetor caso usuário adicione mais combustível nesta seção
 				CONT++;
 			}
 		} while (opcao != 2);
+		/*
 		for (int i = 0; i < vetorTypeFuel.length; i++) {
 			typeFuel[i] = ManagerIo.verificaTipoCombustivel(vetorTypeFuel[i]);
 			System.out.println("Combustível: " + typeFuel[i]);
-		}
+		}*/
 		
 		// ManagerIo.verificaTipoCombustivel(tipoCombustivel);
 		
