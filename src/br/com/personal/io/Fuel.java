@@ -25,6 +25,11 @@ public class Fuel {
 	private String levelReservoir; // Nível do reservatório
 
 	private String dateSupplies; // Data de abastecimento
+	
+
+	public static int qtdCombustivel = 6;
+	public int vetorTypeFuel[] = new int[qtdCombustivel];
+	
 
 	public Long getId() {
 		return id;
@@ -104,6 +109,14 @@ public class Fuel {
 
 	public void setDateSupplies(String dateSupplies) {
 		this.dateSupplies = dateSupplies;
+	}
+	
+	public int getQtdCombustivel() {
+		return qtdCombustivel;
+	}
+	
+	public void setQtdCombustivel(int qtdCombustivel) {
+		this.qtdCombustivel = qtdCombustivel;
 	}
 
 }

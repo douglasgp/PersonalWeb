@@ -20,7 +20,7 @@ public class GenerateFile {
 	public static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
-
+		
 		Fuel fuel = new Fuel();
 		ManagerIo opManager = new ManagerIo();
 		
@@ -81,6 +81,9 @@ public class GenerateFile {
 			System.out.println("Qtd/litro: " + QTD_LITRO[i]);
 			System.out.println();
 		}
+		
+		// 
+		ManagerIo.finalizaRegistro();
 		
 	}
 }

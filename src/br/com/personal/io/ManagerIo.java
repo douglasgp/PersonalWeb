@@ -10,6 +10,8 @@ public class ManagerIo {
 	public static String[] typeFuel = new String[VALOR];
 	public static double valueFuel[]= new double[VALOR];
 	
+	// Método para retornar nome do combustível, baseado no cód retornado
+	// do método anterior
 	public static String verificaTipoCombustivel(int valor) {
 		if(valor == 1) {
 			fuelStr = "Gasolina";
@@ -36,6 +38,7 @@ public class ManagerIo {
 		return fuelStr;
 	}
 	
+	// Método que solicita e retorna o preço/litro do combustível
 	public static double registraPrecoCombustivel() {
 		System.out.println(" = = = = = " + fuelStr + " = = = = = ");
 		System.out.println("Informe VALOR por litro: ");
@@ -54,7 +57,8 @@ public class ManagerIo {
 		double total = preco * litro;
 		return total;
 	}
-	public void adicionaCombustivel() {
+	
+	public static void finalizaRegistro() {
 		
 	}
 	
