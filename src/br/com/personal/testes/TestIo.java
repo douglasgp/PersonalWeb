@@ -10,6 +10,8 @@ import java.util.Scanner;
 
 public class TestIo {
 	public static Scanner scan = new Scanner(System.in);
+	public static String name = null;
+	public static String path = null;
 	
 	public static void criaArquivo(String name) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(name));
@@ -33,7 +35,23 @@ public class TestIo {
 		String linha = "";
 		System.out.println("Escreva algo");
 		linha = scan.nextLine();
+		
 		buffWrite.append(linha + "\n");
 		buffWrite.close();
+	}
+	
+	public static String defineNome() {
+		System.out.println("Informe o nome do arquivo: ");
+		name = scan.nextLine();
+		path = "/home/douglasgp/Public/Pedidos/"+name+".txt";
+		return path;
+	}
+	
+	public static void conferePath() {
+		if(path != "" ) {
+			System.out.println("Path:\n"+path);
+		}else {
+			System.out.println("Path VAZIO!");
+		}
 	}
 }

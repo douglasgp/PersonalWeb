@@ -10,21 +10,24 @@ public class TestIoMain {
 		String name;
 		int opcao = 0;
 		do {
-			System.out.println("1. Criar arquivo\n"
+			System.out.println("1. Definir nome do arquivo\n"
 					+ "2. Ler arquivo\n"
 					+ "3. Escrever no arquivo\n"
+					+ "4. Conferir nome do path\n"
 					+ "9. Sair\n");
+			opcao = scan.nextInt();
 			switch (opcao) {
 			case 1:
-				System.out.println("Informe o nome do arquivo: ");
-				name = scan.nextLine();
-				path = "/home/douglasgp/Public/Pedidos/"+name+".txt";
+				path = TestIo.defineNome();
 				break;
 			case 2:
-				TestIo.escritor(path);
+				TestIo.leitor(path);
 				break;
 			case 3:
-				TestIo.leitor(path);
+				TestIo.escritor(path);
+				break;
+			case 4:
+				TestIo.conferePath();
 				break;
 			default:
 				break;
