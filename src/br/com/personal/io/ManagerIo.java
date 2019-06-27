@@ -5,10 +5,15 @@ import java.util.Scanner;
 public class ManagerIo {
 	public static Scanner scan = new Scanner(System.in);
 	public static String fuelStr = null;
-	public static int VALOR = 6;
+	public static int VALUE = 6;
 	public static int CONT = 0;
-	public static String[] typeFuel = new String[VALOR];
-	public static double valueFuel[] = new double[VALOR];
+	public static double TOTAL_VALUE = 0;
+	
+	public static String[] TYPE_FUEL = new String[VALUE];
+	public static double VALUE_FUEL[] = new double[VALUE];
+	
+	public static double[] QTD_LITER = new double[VALUE];
+	public static int VETOR_FUEL[] = new int[VALUE];
 
 	// Método para retornar nome do combustível, baseado no cód retornado
 	// do método anterior
@@ -73,16 +78,16 @@ public class ManagerIo {
 			// 2.3. Estrutura para enviar e receber parâmetros/informações do combustível
 			if (opcao == 1) {
 				// 2.4. Armazena numa posição do vetor, o código retornado pelo método
-				vetorTypeFuel[CONT] = ManagerIo.escolheCombustivel(opcao);
+				VETOR_FUEL[CONT] = escolheCombustivel(opcao);
 				// 2.5 Armazena numa posição do vetor nome do combustível retornado pelo método
 				// Envio de parâmetro INT e retorno de parâmetro STRING
-				typeFuel[CONT] = ManagerIo.verificaTipoCombustivel(vetorTypeFuel[CONT]);
+				TYPE_FUEL[CONT] = verificaTipoCombustivel(VETOR_FUEL[CONT]);
 
-				valorTypeFuel[CONT] = ManagerIo.registraPrecoCombustivel();
+				VALUE_FUEL[CONT] = registraPrecoCombustivel();
 
-				QTD_LITRO[CONT] = ManagerIo.registraLitroCombustivel();
+				QTD_LITER[CONT] = registraLitroCombustivel();
 
-				VALOR_TOTAL = ManagerIo.calculaValorTotal(valorTypeFuel[CONT], QTD_LITRO[CONT]);
+				TOTAL_VALUE = calculaValorTotal(VALUE_FUEL[CONT], QTD_LITER[CONT]);
 
 				// 2.6 contador soma +1 para ser utilizado pelo vetor caso usuário adicione mais
 				// combustível nesta seção
@@ -100,6 +105,31 @@ public class ManagerIo {
 	}
 
 	public static void menuPrincipal() {
+		int opcao = 0;
+		do {
+			// mostra menu de opões
 
+			System.out.println(" = = = = = = = = = = = = = = = = = = = = =  MENU PRINCIPAL  = = = = = = = = = = = = = = = = = = = = = = = = = =  ");
+			System.out.printf("%12.19s | %-12.15s | %-20.25s | %-17.20s | %-17.10s |%s\n", "1. Consultar  ","2. Registrar  ", "3. Consultar Carrinho", "4. Remover Produto", "5. Sair da ", "0. Finalizar");
+			System.out.printf("%12.19s | %-12.15s | %-20.25s | %-17.18s | %-17.12s |%s\n", " abastecimento"," abastecimento", "   de Compras        ", "    do carrinho   ", "   aplicação", " Compra");
+			System.out.println(" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+
+			opcao = scan.nextInt();
+			// processa opção escolhida no menu
+			switch (opcao) {
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3: //
+				break;
+			case 4: //
+				break;
+			case 5: //
+				break;
+			default:
+				System.out.println("Operação Inválida!");
+			}
+		} while (opcao != 0); // repete enquanto opção diferente de sair
 	}
 }

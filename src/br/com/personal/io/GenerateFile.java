@@ -24,6 +24,7 @@ public class GenerateFile {
 		Fuel fuel = new Fuel();
 		ManagerIo opManager = new ManagerIo();
 		
+		ManagerIo.menuPrincipal();		
 
 		// 1.1. Solicita DATA de abastecimento
 		System.out.println("Data: ");
@@ -32,14 +33,7 @@ public class GenerateFile {
 		//1.2. Solicita CÓDIGO DE CUPOM FISCAL
 		System.out.println("CCF: ");
 		int ccf = scan.nextInt();
-		
-		
-		/*
-		for (int i = 0; i < vetorTypeFuel.length; i++) {
-			typeFuel[i] = ManagerIo.verificaTipoCombustivel(vetorTypeFuel[i]);
-			System.out.println("Combustível: " + typeFuel[i]);
-		}*/
-		
+				
 		//3.1. Encapsulamento de dados
 		fuel.setDateSupplies(data);
 		fuel.setCcf(ccf);
