@@ -10,8 +10,6 @@ public class Fuel {
 	
 	private int ccf;
 	
-	private String typeFuel;
-
 	private double valueLiter; // Valor por litro
 
 	private double amount; // Valor total
@@ -26,10 +24,11 @@ public class Fuel {
 
 	private String dateSupplies; // Data de abastecimento
 	
-
-	public static int qtdCombustivel = 6;
-	public int vetorTypeFuel[] = new int[qtdCombustivel];
-	
+	public static int qtdCombustivel = 6; // Total de combustíveis disponíveis para escolher
+	public int vetorTypeFuel[] = new int[qtdCombustivel]; // Cód. de posição do combustível
+	public String typeFuel[] = new String[qtdCombustivel]; // Nome do combustível
+	public double valueFuel[] = new double[qtdCombustivel]; // Valor por litro
+	public double qtd_liter[] = new double[qtdCombustivel]; // Quantidade de litros de 1 combustível escolhido
 
 	public Long getId() {
 		return id;
@@ -46,15 +45,7 @@ public class Fuel {
 	public void setCcf(int ccf) {
 		this.ccf = ccf;
 	}
-	
-	public String getTypeFuel() {
-		return typeFuel;
-	}
-	
-	public void setTypeFuel(String typeFuel) {
-		this.typeFuel = typeFuel;
-	}
-
+		
 	public double getValueLiter() {
 		return valueLiter;
 	}
@@ -116,7 +107,38 @@ public class Fuel {
 	}
 	
 	public void setQtdCombustivel(int qtdCombustivel) {
-		this.qtdCombustivel = qtdCombustivel;
+		Fuel.qtdCombustivel = qtdCombustivel;
 	}
+	
+	public int[] getVetorTypeFuel() {
+		return vetorTypeFuel;
+	}
+	public void setVetorTypeFuel(int[] vetorTypeFuel) {
+		this.vetorTypeFuel = vetorTypeFuel;
+	}
+	
+	public String[] getTypeFuel() {
+		return typeFuel;
+	}
+	
+	public void setTypeFuel(String[] typeFuel) {
+		this.typeFuel = typeFuel;
+	}
+	public double[] getValueFuel() {
+		return valueFuel;
+	}
+
+	public void setValueFuel(double[] valueFuel) {
+		this.valueFuel = valueFuel;
+	}
+	
+	public double[] getQtd_liter() {
+		return qtd_liter;
+	}
+
+	public void setQtd_liter(double[] qtd_liter) {
+		this.qtd_liter = qtd_liter;
+	}
+
 
 }
