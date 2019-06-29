@@ -106,7 +106,8 @@ public class GenerateFile {
 		// 4.1. Exibe dados informados e gerados ao decorrer da sessão
 		System.out.println("Data informada: " + fuel.getDateSupplies());
 		System.out.println("CCF: " + fuel.getCcf());
-
+		
+		// 5.1. Estrutura para exibir conteúdo das variáveis
 		for (int i = 0; i < CONT; i++) {
 			System.out.println(" = = = = = " + fuel.getTypeFuel()[i] + " = = = = = ");
 			System.out.println("Código: " + fuel.getVetorTypeFuel()[i]);

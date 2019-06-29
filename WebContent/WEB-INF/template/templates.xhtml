@@ -7,18 +7,20 @@
 <h:head>
 	<title>Personal - Combustivel</title>
 </h:head>
-
+<h:link rel="stylesheet" type="text/css" href="estilo2.css" />
 <h:body>
 	<div id="header" style="text-align: center">
 		<h1>Controle Pessoal - Combustivel</h1>
 	</div>
 
+	<li class="dropdown"><a href="add-fuel.html" class="droptbn">Add Supply</a></li>
+      	
 	<h:link value="Página Inicial" outcome="pagina-inicial" /> -
-      	<h:link value="Controle de Consumo" outcome="controle-consumo" /> -
+		<h:link value="Controle de Consumo" outcome="controle-consumo" /> -
       	<h:link value="Lista Postos" outcome="lista-posto" /> -
-      	<h:link value="Relatórios" outcome="relatorio" />
-      	<h:link valu="Câmbio" outcome="cambio" />
-
+      	<h:link value="Relatórios" outcome="relatorio" /> -
+      	<h:link value="Câmbio" outcome="cambio" />
+      	
 	<ui:insert name="corpo-pagina"> Espaço para o conteúdo da tela</ui:insert>
 
 	<div id="footer" style="text-align: center">
