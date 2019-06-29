@@ -14,6 +14,8 @@ public class ManagerIo {
 	
 	public static double[] QTD_LITER = new double[VALUE];
 	public static int VETOR_FUEL[] = new int[VALUE];
+	
+	public static Fuel fuel = new Fuel();
 
 	// Método para retornar nome do combustível, baseado no cód retornado
 	// do método anterior
@@ -42,7 +44,7 @@ public class ManagerIo {
 		}
 		return fuelStr;
 	}
-
+	
 	// Método que solicita e retorna o preço/litro do combustível
 	public static double registraPrecoCombustivel() {
 		System.out.println(" = = = = = " + fuelStr + " = = = = = ");
@@ -64,44 +66,11 @@ public class ManagerIo {
 	}
 
 	public static void finalizaRegistro() {
-
+		
 	}
 
-	public static int escolheCombustivel(int valor) {
-		// 2.1. Estrutura para adicionar um ou mais tipo/valor de combustível
-		int opcao = 0;
-		do {
-			// 2.2. Menu de opção para inserir informações de combustível
-			System.out.println("Adicionar Combustível?");
-			System.out.println("1. Sim\n" + "2. Não\n");
-			opcao = scan.nextInt();
-			// 2.3. Estrutura para enviar e receber parâmetros/informações do combustível
-			if (opcao == 1) {
-				// 2.4. Armazena numa posição do vetor, o código retornado pelo método
-				VETOR_FUEL[CONT] = escolheCombustivel(opcao);
-				// 2.5 Armazena numa posição do vetor nome do combustível retornado pelo método
-				// Envio de parâmetro INT e retorno de parâmetro STRING
-				TYPE_FUEL[CONT] = verificaTipoCombustivel(VETOR_FUEL[CONT]);
-
-				VALUE_FUEL[CONT] = registraPrecoCombustivel();
-
-				QTD_LITER[CONT] = registraLitroCombustivel();
-
-				TOTAL_VALUE = calculaValorTotal(VALUE_FUEL[CONT], QTD_LITER[CONT]);
-
-				// 2.6 contador soma +1 para ser utilizado pelo vetor caso usuário adicione mais
-				// combustível nesta seção
-				CONT++;
-			}
-		} while (opcao != 2);
-
-		// int valor = 0;
-		System.out.println("Tipo combustível: ");
-		System.out.println("1. Gasolina\n" + "2. Gasolina Aditivada\n" + "3. Etanol\n" + "4. Etanol Aditivado\n"
-				+ "5. Diesel\n" + "6. Outros\n" + "9. Sair");
-		valor = scan.nextInt();
-
-		return valor;
+	public static void escolheCombustivel(int valor) {
+		
 	}
 
 	public static void menuPrincipal() {
