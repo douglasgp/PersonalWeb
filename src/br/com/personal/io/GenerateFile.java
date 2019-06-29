@@ -11,7 +11,7 @@ public class GenerateFile {
 	public static String tipoStrCombustivel;
 	public static int tipoCombustivel = 0;
 	public static double VALOR_TOTAL = 0;
-	
+
 	public static int vetorTypeFuel[] = new int[QTD_COMBUSTIVEL];
 	public static String typeFuel[] = new String[QTD_COMBUSTIVEL];
 	public static double valorTypeFuel[] = new double[QTD_COMBUSTIVEL];
@@ -20,39 +20,104 @@ public class GenerateFile {
 	public static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		
+
 		Fuel fuel = new Fuel();
 		ManagerIo opManager = new ManagerIo();
-		
-		ManagerIo.menuPrincipal();		
+
+		// ManagerIo.menuPrincipal();
 
 		// 1.1. Solicita DATA de abastecimento
 		System.out.println("Data: ");
 		String data = scan.nextLine();
-		
-		//1.2. Solicita CÓDIGO DE CUPOM FISCAL
+
+		// 1.2. Solicita CÓDIGO DE CUPOM FISCAL
 		System.out.println("CCF: ");
 		int ccf = scan.nextInt();
+
+		// Teste para alimentar variável get/set da classe FUEL
+		// 2.1. Estrutura para adicionar um ou mais tipo/valor de combustível
+		int valor = 0;
+		int opcao = 0;
+		do {
+			// 2.2. Menu de opção para inserir informações de combustível
+			System.out.println("Adicionar Combustível?");
+			System.out.println("1. Sim\n" + "2. Não\n");
+			opcao = scan.nextInt();
+			// 2.3. Estrutura para enviar e receber parâmetros/informações do combustível
+			if (opcao == 1) {
+				// int valor = 0;
+				System.out.println("Tipo combustível: ");
+				System.out.println("1. Gasolina\n" + "2. Gasolina Aditivada\n" + "3. Etanol\n" + "4. Etanol Aditivado\n"
+						+ "5. Diesel\n" + "6. Outros\n" + "9. Sair");
+				// Armazena em uma variável inteira a opção escolhida
+				tipoCombustivel = scan.nextInt();
 				
-		//3.1. Encapsulamento de dados
+				// 2.3.1. Armazena a opção escolhida em array localizado em outra classe atraves do get
+				fuel.getVetorTypeFuel()[CONT] = tipoCombustivel;
+				
+				// Envia a opção escolhida (int) e recebe pelo método uma String
+				tipoStrCombustivel = ManagerIo.verificaTipoCombustivel(tipoCombustivel);
+				
+				// A variável da classe modelo é chamada para receber a String retornada do método anterior
+				// 2.4. Armazena numa posição do vetor, o código retornado pelo método
+				
+				// 2.5. Armazena numa posição do vetor nome do combustível retornado pelo método
+				// Envio de parâmetro INT e retorno de parâmetro STRING
+				fuel.getTypeFuel()[CONT] = tipoStrCombustivel;
+				
+				// Exibe a String retornada em uma posição do vetor
+				System.out.println(fuel.getVetorTypeFuel()[CONT]);
+				
+				// 2.5.1. Armazena numa posição do vetor PREÇO do combustível retornado pelo método
+				valorTypeFuel[CONT] = ManagerIo.registraPrecoCombustivel();
+				
+				// 2.5.2. Repassa o valor armazenado numa posição do vetor para uma variável de outra classe
+				fuel.getValueFuel()[CONT] = valorTypeFuel[CONT];
+				
+				// Exibe o valor armazenado nesta variável
+				System.out.println("Valor: R$ " + fuel.getValueFuel()[CONT]);
+				
+				// 2.5.3. Armazena numa posição do vetor a qtd de litros de combustível
+				QTD_LITRO[CONT] = ManagerIo.registraLitroCombustivel();
+				
+				// 2.5.4. Repassa valor armazenado numa posição do vetor para uma variável de outra classe
+				fuel.getQtd_liter()[CONT] = QTD_LITRO[CONT];
+				
+				// Exibe total de litros do combustível escolhido
+				System.out.println("Litros: " + fuel.getQtd_liter()[CONT]);
+				
+				// 2.5.5. Armazena o valor total, calculado pelo retorno do método
+				// Soma e acumula valor total
+				VALOR_TOTAL += ManagerIo.calculaValorTotal(valorTypeFuel[CONT], QTD_LITRO[CONT]);
+							
+				// 2.5.6. Repassa valor total para variável localizada em outra classe através do uso de get
+				fuel.setAmount(VALOR_TOTAL);
+				
+				// 2.6 contador soma +1 para ser utilizado pelo vetor caso usuário adicione mais
+				// combustível nesta seção
+				CONT++;
+			}
+		} while (opcao != 2);
+
+		// 3.1. Encapsulamento de dados
 		fuel.setDateSupplies(data);
 		fuel.setCcf(ccf);
-		fuel.setTypeFuel(tipoStrCombustivel);
-		
+
 		// 4.1. Exibe dados informados e gerados ao decorrer da sessão
 		System.out.println("Data informada: " + fuel.getDateSupplies());
 		System.out.println("CCF: " + fuel.getCcf());
-		System.out.println("Valor total: R$ "+VALOR_TOTAL);
+
 		for (int i = 0; i < CONT; i++) {
-			System.out.println(" = = = = = " + typeFuel[i] + " = = = = = ");
-			System.out.println("Código: " + vetorTypeFuel[i]);
-			System.out.println("Preço/litro: R$ " + valorTypeFuel[i]);
-			System.out.println("Qtd/litro: " + QTD_LITRO[i]);
+			System.out.println(" = = = = = " + fuel.getTypeFuel()[i] + " = = = = = ");
+			System.out.println("Código: " + fuel.getVetorTypeFuel()[i]);
+			System.out.println("Preço/litro: R$ " + fuel.getValueFuel()[i]);
+			System.out.println("Qtd/litro: " + fuel.getQtd_liter()[i]);
 			System.out.println();
 		}
-		
-		// 
-		ManagerIo.finalizaRegistro();
-		
+
+		System.out.println("Valor total: R$ " + fuel.getAmount());
+
+		// managerIo.finalizaRegistro();
+
 	}
 }
