@@ -8,7 +8,9 @@ public class Fuel {
 
 	private Long id;
 	
-	private int ccf;
+	private int ccf; // Código do cupom fiscal
+
+	private static int qtdCombustivel = 6; // Total de opções de combustíveis disponíveis para escolher
 	
 	private double valueLiter; // Valor por litro
 
@@ -19,12 +21,11 @@ public class Fuel {
 	private double dst; // Km Percorrido
 
 	private double totalLiters; // Total de Litros
-
+	
 	private String levelReservoir; // Nível do reservatório
 
 	private String dateSupplies; // Data de abastecimento
 	
-	public static int qtdCombustivel = 6; // Total de combustíveis disponíveis para escolher
 	public int vetorTypeFuel[] = new int[qtdCombustivel]; // Cód. de posição do combustível
 	public String typeFuel[] = new String[qtdCombustivel]; // Nome do combustível
 	public double valueFuel[] = new double[qtdCombustivel]; // Valor por litro

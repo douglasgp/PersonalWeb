@@ -101,4 +101,5 @@ public class ManagerIo {
 			}
 		} while (opcao != 0); // repete enquanto opção diferente de sair
 	}
+
 }

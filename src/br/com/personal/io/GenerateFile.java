@@ -11,6 +11,8 @@ public class GenerateFile {
 	public static String tipoStrCombustivel;
 	public static int tipoCombustivel = 0;
 	public static double VALOR_TOTAL = 0;
+	public static int odo = 0;
+	public static int dst = 0;
 
 	public static int vetorTypeFuel[] = new int[QTD_COMBUSTIVEL];
 	public static String typeFuel[] = new String[QTD_COMBUSTIVEL];
@@ -98,10 +100,19 @@ public class GenerateFile {
 				CONT++;
 			}
 		} while (opcao != 2);
-
+		
+		// 2.4. Informar dados de quilometragem
+		System.out.println("Iforme o ODO: ");
+		odo = scan.nextInt();
+		
+		System.out.println("Informe o DST: ");
+		dst = scan.nextInt();
+		
 		// 3.1. Encapsulamento de dados
 		fuel.setDateSupplies(data);
 		fuel.setCcf(ccf);
+		fuel.setOdo(odo);
+		fuel.setDst(dst);
 
 		// 4.1. Exibe dados informados e gerados ao decorrer da sessão
 		System.out.println("Data informada: " + fuel.getDateSupplies());
