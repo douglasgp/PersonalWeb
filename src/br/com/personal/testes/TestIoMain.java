@@ -14,6 +14,7 @@ public class TestIoMain {
 					+ "2. Ler arquivo\n"
 					+ "3. Escrever no arquivo\n"
 					+ "4. Conferir nome do path\n"
+					+ "5. Registrar abastecimento\n"
 					+ "9. Sair\n");
 			opcao = scan.nextInt();
 			switch (opcao) {
@@ -28,6 +29,12 @@ public class TestIoMain {
 				break;
 			case 4:
 				TestIo.conferePath();
+				break;
+			case 5:
+				TestIo.recFuel();
+				break;
+			case 6:
+				TestIo.testMenu();
 				break;
 			default:
 				break;

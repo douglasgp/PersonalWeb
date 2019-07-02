@@ -66,55 +66,59 @@ public class TestIo {
 
 	public static void recFuel() throws IOException {
 		String typeFuel[] = {"Gasolina", "Etanol", "Diesel"};
-		double valueFuel[] = {4.50, 2.90, 3.80};  
-		
+		// double valueFuel[] = {4.50, 2.90, 3.80};
+		int tam = typeFuel.length;
+		// 1.1. Declara variáveis com conteúdo
 		String data = "14/06/2019";
 		int ccf = 39308;
-		
+		// 2.1. Invoco classe modelo e repasso conteúdo para suas variáveis
 		fuel.setDateSupplies(data);
 		fuel.setCcf(ccf);
-		
-		System.out.println(fuel.getDateSupplies());
-		System.out.println(fuel.getCcf());
-
-		for (int i = 0; i < typeFuel.length; i++) {
-			System.out.println(fuel.getTypeFuel()[i] = typeFuel[i]);
-			System.out.println(fuel.getValueFuel()[i] = valueFuel[i]);
-		}
-		
+		// 3.1. Exibe dados de classe externa
+		System.out.println("Data: " + fuel.getDateSupplies());
+		System.out.println("CCF: " + fuel.getCcf());
+		// 3.2. Exibe opção para o usuário
 		System.out.println("Gravar em arquivo .txt?\n"
 				+ "1. Sim\n"
 				+ "2. Não\n");
 		int opcao = scan.nextInt();
+		// 4.1. Estrutura para gerir opções de gravação de arquivo
 		if (opcao == 1) {
-			FileWriter file = new FileWriter("/home/douglasgp/Public/TestFiles/"+fuel.getCcf()+".db");
+			// 4.1.1. Carrega arquivo com caminho absoluto para gravação
+			FileWriter file = new FileWriter("/home/douglasgp/Public/TestFiles/"+fuel.getCcf()+".txt");
+			// 4.1.2. Declara uma nova instância do método responsável por gravar conteúdo no arquivo
 			PrintWriter recFile = new PrintWriter(file);
-			
-			recFile.write(fuel.getDateSupplies());
-			recFile.write(fuel.getCcf());
-			for (int i = 0; i < typeFuel.length; i++) {
-				recFile.print(fuel.getTypeFuel()[i]);
-				recFile.print(fuel.getValueFuel()[i]);
-				// recFile.print("Combustível " + (i+1) + ": "+fuel.getTypeFuel()[i]+"\n");
-			}
-			recFile.println("");			
+			// 4.1.3. Grava no arquivo declarando explicitamente conteúdo por conteúdo 
+			recFile.print(tam);
+			recFile.println(fuel.getDateSupplies());
+			recFile.println(fuel.getCcf());
+			recFile.println();			
+			// Fecha arquivo
 			file.close();
-			
 		}
+		// 3.3. Exibe opções de leitura do arquivo
 		System.out.println("Ler arquivo?\n"
 				+ "1. Sim\n"
 				+ "2. Não\n");
 		opcao = scan.nextInt();
+		// 4.2. Estrutura para gerir opções de leitura do arquivo
 		if(opcao == 1) {
-			// Abrir arquivo para leitura
-			DataInputStream dis = new DataInputStream(new FileInputStream("/home/douglasgp/Public/TestFiles/"+fuel.getCcf()+".db"));
-			
-			int tam = dis.readInt();
+			// 4.2.1. Abrir arquivo para leitura informando caminho absoluto
+			DataInputStream dis = new DataInputStream(new FileInputStream("/home/douglasgp/Public/TestFiles/"+fuel.getCcf()+".txt"));
+			// 4.2.2. Armazena a leitura do tamanho em uma variável
+			tam = dis.readInt();
+			// 4.2.3. Exibe o tamanho
 			System.out.println("Tamanho: " + tam);
-			
+			// 4.2.4. Instancia conteúdos para variáveis locais
+			String date = dis.readLine();
+			int cupom = dis.readInt();
+			// 4.2.5. Exibe o conteúdo das variávies
+			System.out.printf("%4.3s | %-20.8s\n", "DATA", "CCF");
+			System.out.printf("%-20s | %04d\n", date, cupom);
+			// 4.2.6. Fecha arquivo após leitura
+			dis.close();
 		}
-		
-		
+				
 	}
 	
 	public static void testMenu() {

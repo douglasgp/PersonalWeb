@@ -40,7 +40,7 @@ public class AddFuelServlet extends HttpServlet {
 		Double kmTraveled = Double.parseDouble(stringKmTraveled.trim());
 		
 		String stringTotalLiters = request.getParameter("totalLiters");
-		Double totalLiters = Double.parseDouble(stringTotalLiters);
+		Double totalLiters = Double.parseDouble(stringTotalLiters.trim());
 		
 		String levelReservoir = request.getParameter("levelReservoir");
 		//String dateInText = request.getParameter("dateSupplies");
@@ -63,7 +63,7 @@ public class AddFuelServlet extends HttpServlet {
 		fuel.setKmTraveled(kmTraveled);
 		fuel.setTotalLiters(totalLiters);
 		fuel.setLevelReservoir(levelReservoir);
-		fuel.setDateSupplies(Calendar.getInstance());
+		fuel.setDateSupplies(Calendar.getInstance());	
 		
 		//Saves fuel
 		FuelBean fuelBean = new FuelBean();
@@ -77,7 +77,7 @@ public class AddFuelServlet extends HttpServlet {
 		// Prints the feed that was added
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<h2>Registro de abastecimento da data " + fuel.getDateSupplies().getTime() + "\n adicionado com sucesso!</h2>");
+		out.println("<h2>Registro de abastecimento da data " + fuel.getDateSupplies().getTime() + "\n adicionado com sucesso!</h2>"); 
 		out.println("</body>");
 		out.println("</html>");
 

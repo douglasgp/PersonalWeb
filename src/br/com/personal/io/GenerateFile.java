@@ -1,5 +1,8 @@
 package br.com.personal.io;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 import br.com.personal.io.ManagerIo;
@@ -11,8 +14,6 @@ public class GenerateFile {
 	public static String tipoStrCombustivel;
 	public static int tipoCombustivel = 0;
 	public static double VALOR_TOTAL = 0;
-	public static int odo = 0;
-	public static int dst = 0;
 
 	public static int vetorTypeFuel[] = new int[QTD_COMBUSTIVEL];
 	public static String typeFuel[] = new String[QTD_COMBUSTIVEL];
@@ -21,7 +22,7 @@ public class GenerateFile {
 
 	public static Scanner scan = new Scanner(System.in);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 
 		Fuel fuel = new Fuel();
 		ManagerIo opManager = new ManagerIo();
@@ -103,10 +104,10 @@ public class GenerateFile {
 		
 		// 2.4. Informar dados de quilometragem
 		System.out.println("Iforme o ODO: ");
-		odo = scan.nextInt();
+		int odo = scan.nextInt();
 		
 		System.out.println("Informe o DST: ");
-		dst = scan.nextInt();
+		double dst = scan.nextDouble();
 		
 		// 3.1. Encapsulamento de dados
 		fuel.setDateSupplies(data);
@@ -126,8 +127,35 @@ public class GenerateFile {
 			System.out.println("Qtd/litro: " + fuel.getQtd_liter()[i]);
 			System.out.println();
 		}
-
 		System.out.println("Valor total: R$ " + fuel.getAmount());
+		
+		System.out.println("Registrar abastecimento em arquivo .txt ?\n"
+				+ "1. Sim\n"
+				+ "2. Não\n");
+		int opcao3 = scan.nextInt();
+		
+		if(opcao3 == 1) {
+			FileWriter file1 = new FileWriter("/home/douglasgp/Public/TestFiles/" + fuel.getCcf() + ".txt");
+			PrintWriter recFile1 = new PrintWriter(file1);
+			PrintWriter recFile2 = new PrintWriter(file1);
+			
+			recFile1.println("Qtd combustivel: " + CONT);
+			recFile1.println("Data: " + fuel.getDateSupplies());
+			recFile1.println("CCF: " + fuel.getCcf());
+			recFile1.println("ODO: " + fuel.getOdo());
+			recFile1.println("DST: " + fuel.getDst());
+			for(int i = 0; i < CONT; i++) {
+				recFile1.print("");
+				recFile1.println(" = = = = " + fuel.getTypeFuel()[i] + " = = = = ");
+				recFile1.println("Código: " + fuel.getVetorTypeFuel()[i]);
+				recFile1.println("Preço/litro: " + fuel.getValueFuel()[i]);
+				recFile1.println("Qtd/litro: R$" + fuel.getQtd_liter()[i]);
+			}
+			recFile1.println("");
+			
+			recFile2.printf("%12.19s | %-12.15s |");
+			file1.close();
+		}
 
 		// managerIo.finalizaRegistro();
 
