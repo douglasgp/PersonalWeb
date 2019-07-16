@@ -73,6 +73,11 @@ public class TestMethodReturn {
 			for (int i = 0; i < mHoraAula.length; i++) {
 				mHoraAula[i] = vetorSem3[i];
 			}
+		} else if(opcao == 4) {
+			int vetorSem4[] = { 80, 80, 80, 80, 80, 40, 40, 40 };
+			for (int i = 0; i < mHoraAula.length; i++) {
+				mHoraAula[i] = vetorSem4[i];
+			}
 		}
 		return mHoraAula;
 	}
@@ -87,9 +92,19 @@ public class TestMethodReturn {
 				disciplinas[i] = disciplinaSem1[i];
 			}
 		} else if (opcao == 2) {
-			String disciplinaSem1[] = { "IES100", "ILP010", "ILP502", "IHW100", "ISO100", "MET100", "MCA002", "CCG006","LIN200" };
-			for (int i = 0; i < disciplinaSem1.length; i++) {
-				disciplinas[i] = disciplinaSem1[i];
+			String disciplinaSem2[] = { "IES100", "ILP010", "ILP502", "IHW100", "ISO100", "MET100", "MCA002", "CCG006","LIN200" };
+			for (int i = 0; i < disciplinaSem2.length; i++) {
+				disciplinas[i] = disciplinaSem2[i];
+			}
+		}else if(opcao == 3) {
+			String disciplinaSem3[] = { "IES200", "IED001", "IHC001", "ILP503", "ISO200", "IBD002", "MPL001", "CEF100","LIN300" };
+			for (int i = 0; i < disciplinaSem3.length; i++) {
+				disciplinas[i] = disciplinaSem3[i];
+			}
+		} else if(opcao == 4) {
+			String disciplinaSem3[] = { "IES300", "ILP007", "IBD100", "IRC008", "AGO006", "ISG003", "HST002", "LIN400"};
+			for (int i = 0; i < disciplinaSem3.length; i++) {
+				disciplinas[i] = disciplinaSem3[i];
 			}
 		}
 		return disciplinas;
