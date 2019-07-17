@@ -19,11 +19,9 @@ public class TestMethodReturn {
 		NUM_SEMESTRE = scan.nextInt();
 		// Invoca método para retornar qtd de matérias do semestre informado
 		TOTAL_DISCIPLINA = qtdDisciplina(NUM_SEMESTRE);
-		// Invoca método para retornar vetor da carga horárias das disciplinas do
-		// semestre informado
+		// Invoca método para retornar vetor da carga horárias das disciplinas do semestre informado
 		int totalHoras[] = qtdHorasAulas(NUM_SEMESTRE);
-		// Invoca método que retorna vetor com nomes das disciplinas do semestre
-		// informado
+		// Invoca método que retorna vetor com nomes das disciplinas do semestre informado
 		String nomesDisiciplinas[] = nomesDisciplinas(NUM_SEMESTRE);
 
 		// Exibe total de disciplina e o semestre informado
