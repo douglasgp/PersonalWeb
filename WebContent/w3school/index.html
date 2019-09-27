@@ -2,32 +2,104 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: DarkSlateGray;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      /* Style the header */
+      header {
+        background-color: #666;
+        padding: 30px;
+        text-align: cente;
+        font-size: 35px;
+        color: white;
+      }
+      /* Create two columns/boxes that floats next to each other */
+      nav {
+        float: left;
+        witth: 60%;
+        height: 400px; /* only for demonstration, should be removed */
+        background: #8FBC8F;
+        padding: 10px;
+      }
+      /* Style the list inside the menu */
+      nav ul {
+        list-style-type: none;
+        padding: 50;
+      }
+      article {
+        float: left;
+        padding: 20px;
+        width: 70%;
+        background-color: #f1f1f1;
+        height: 400px; /* only for demonstration, should be removed */
+      }
+      /* Clear floats after the columns */
+      section: after{
+        content: "";
+        display: table;
+        clear: both;
+      }
+      /* Style the footer */
+      footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+      /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+      @media (max-width: 900px){
+        nav, article {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
     <title>Página Principal</title>
   </head>
-  <body style="Background-color:LightSteelBlue;">
-    <img src="w3schools.png" alt="W3Schools.com" wdth="104" height="142">
+  <body>
+    <header>
+      <img src="w3schools.png" align="left" alt="W3Schools.com" width="304" height="142">
+      <h2>CONTENT</h2>
+    </header>
 
-    <h2 style="color:green;">CONTENT</h2>
+    <section>
+      <nav>
+        <ul>
+          <li><a href="Use_Image.html">The src Attribute</a></li>
+          <li><a href="alt_attribute.html">The alt Attribute</a></li>
+          <li><a href="size_attribute.html">Size Attribute</a></li>
+          <li><a href="style_attribute.html">Style Attribute</a></li>
+          <li><a href="about_use.html">About W3Schools</a></li>
+          <li><a href="quotes.html">Single or Double Quotes?</a></li>
+          <li><a href="bigger_headings.html">Bigger Headings</a></li>
+          <li><a href="horizontal_rules.html">HTML Horizontal Rules</a></li>
+          <li><a href="background_color.html">Background Color</a></li>
+          <li><a href="text_formatting.html">HTML Text Formatting</a></li>
+          <li><a href="quotation.html"> HTML Quotation and Citation Elements</a></li>
+          <li><a href="comments.html">Comments</a></li>
+          <li><a href="colors.html">Colors</a></li>
+          <li><a href="css_styles_colors.html">Styling HTML with CSS</a></li>
+          <li><a href="links.html">HTML Links - Hyperlinks</a></li>
+          <li><a href="learning_list.html">Conteúdo de Aprendizado</a></li>
+        </ul>
+      </nav>
 
-    <ul>
-      <li><a href="Use_Image.html">The src Attribute</a></li>
-      <li><a href="alt_attribute.html">The alt Attribute</a></li>
-      <li><a href="size_attribute.html">Size Attribute</a></li>
-      <li><a href="style_attribute.html">Style Attribute</a></li>
-      <li><a href="about_use.html">About W3Schools</a></li>
-      <li><a href="quotes.html">Single or Double Quotes?</a></li>
-      <li><a href="bigger_headings.html">Bigger Headings</a></li>
-      <li><a href="horizontal_rules.html">HTML Horizontal Rules</a></li>
-      <li><a href="background_color.html">Background Color</a></li>
-      <li><a href="text_formatting.html">HTML Text Formatting</a></li>
-      <li><a href="quotation.html"> HTML Quotation and Citation Elements</a></li>
-      <li><a href="comments.html">Comments</a></li>
-      <li><a href="colors.html">Colors</a></li>
-      <li><a href="css_styles_colors.html">Styling HTML with CSS</a></li>
-      <li><a href="links.html">HTML Links - Hyperlinks</a></li>
-      <hr>
-      <li><a href="learning_list.html">Conteúdo de Aprendizado</a></li>
-    </ul>
+      <article>
+        <h1> HTML5 Tutorial</h1>
+        <p>This HTML tutorial contains hundreds of HTML examples.</p>
+        <p>With our online HTML editor, you can edit the HTML, and click on a button to view the result.</p>
+      </article>
+    </section>
+
+    <footer>
+      <p>by douglasgp</p>
+    </footer>
 
   </body>
 </html>
