@@ -21,7 +21,7 @@
       body {
         background-color: DarkSeaGreen;
       }
-      b {
+      #myB {
         color: FireBrick;
       }
     </style>
@@ -43,8 +43,8 @@
       <li><a href="links/syntax.html">HTML Links - Syntax</a></li>
     </ul>
 
-    <p>The <b style="background-color:red;">href</b> attribute specifies the destination address (<a href="https://wwww.w3schools.com/html/">https://wwww.w3schools.com/html/</a>) of the link.</p>
-    <p>The <b>link text</b> is the visible part (Visit our HTML tutorial).</p>
+    <p>The <b id="myB">href</b> attribute specifies the destination address (<a href="https://wwww.w3schools.com/html/">https://wwww.w3schools.com/html/</a>) of the link.</p>
+    <p>The <b id="myB">link text</b> is the visible part (Visit our HTML tutorial).</p>
     <p>Clicking on the link text will send you to the specified address.</p>
 
     <p style="background-color:DarkKhaki; border: 20px solid DarkKhaki;"><b>Note</b>Without a forward slash at the end of subfolder addresses, you might generate two requests to the server. Many server will automatically add a forward slash to the end of the address, and then create a new request.</p>
@@ -75,18 +75,26 @@
     </ul>
 
     <h2>HTML Links - The target Attribute</h2>
-    <p>The <b>target</b> attribute specifies where to open the linked document</p>
-    <p>The <b>target</b> attribute can have one of the following values:</p>
+    <p>The <b id="myB">target</b> attribute specifies where to open the linked document</p>
+    <p>The <b id="myB">target</b> attribute can have one of the following values:</p>
     <ul>
-      <li><b>_blank</b> - Opens the linked document in a new wndow or tab</li>
-      <li><b>_self</b> - Opens the linked document in the same window/tab as it was clicked (this is default).</li>
-      <li><b>_parent</b> - Opens the linked document in the parent frame.</li>
-      <li><b>_top</b> - Opens the linkd document in the full body of the window.</li>
+      <li><b id="myB">_blank</b> - Opens the linked document in a new wndow or tab</li>
+      <li><b id="myB">_self</b> - Opens the linked document in the same window/tab as it was clicked (this is default).</li>
+      <li><b id="myB">_parent</b> - Opens the linked document in the parent frame.</li>
+      <li><b id="myB">_top</b> - Opens the linkd document in the full body of the window.</li>
       <li><i>framename</i> - Opens the linked document in a named frame.</li>
     </ul>
 
     <h3>Example 1 - The target</h3>
     <a id="mya" href="links/target1.html" target="_self">Target Attribute</a>
 
+    <hr>
+
+    <h2>HTML Links - Image as Link</h2>
+    <p>It is common to use images as links:</p>
+    <h3>Example 1 - Image as Link</h3>
+    <a id="mya" href="links/link-image.html">HTML Links - Image as Link</a>
+
+    <p style="background-color:DarkKhaki; border: 20px solid DarkKhaki;"><b>Note:</b><b id="myB"> border:0;</b> is added to prevent IE9 (and earlier) from displaying from displaying a border around the image (when the image is a link).</p>
   </body>
 </html>
