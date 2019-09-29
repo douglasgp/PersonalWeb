@@ -3,8 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
+      #myb {
+        color:FireBrick;
+      }
+      #mya:link, #mya:visited{
+        background-color: DodgerBlue;
+        color: White;
+        padding:5px 15px;
+        text-align: center;
+        text-decoration: nome;
+        display: inline-block;
+      }
+      #mya:hover, #mya:active{
+        background-color: LimeGreen;
+      }
+      body {
+        background-color: DarkSeaGreen;
+      }
+    </style>
   </head>
-  <body style="background-color:LightSteelBlue;">
+  <body>
     <img src="w3schools.png" alt="W3Schools.com" wdth="104" height="142">
     <a href="index.html">Página Principal</a>
 
@@ -52,7 +71,19 @@
       <li><a href="links/link-colors1.html">HTML Link Color Buttons</a></li>
     </ul>
 
+    <h2>HTML Links - The target Attribute</h2>
+    <p>The <b>target</b> attribute specifies where to open the linked document</p>
+    <p>The <b>target</b> attribute can have one of the following values:</p>
+    <ul>
+      <li><b>_blank</b> - Opens the linked document in a new wndow or tab</li>
+      <li><b>_self</b> - Opens the linked document in the same window/tab as it was clicked (this is default).</li>
+      <li><b>_parent</b> - Opens the linked document in the parent frame.</li>
+      <li><b>_top</b> - Opens the linkd document in the full body of the window.</li>
+      <li><i>framename</i> - Opens the linked document in a named frame.</li>
+    </ul>
 
+    <h3>Example 1 - The target</h3>
+    <a id="mya" href="links/target1.html" target="_blank">Target Attribute</a>
 
   </body>
 </html>
