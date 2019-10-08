@@ -3,6 +3,8 @@
   <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
     <meta name="viewport" content="width=device-width,initial-scale" charset="utf-8">
     <title></title>
     <style>
@@ -24,12 +26,19 @@
         background-color: LimeGreen;
       }
     </style>
+
   </head>
   <body>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('.collapsible');
+   var instances = M.Collapsible.init(elems, options);
+ });
+    </script>
     <div align="center"><img src="w3schools.png" alt="W3Schools.com" wdth="104" height="142" align="center"></div>
     <div align="center" class="row">
-      <a id="mya" href="index.html" title="Retornar à página inicial">Página Principal</a>
-      <a id="mya" href="images/picture.html" title="HTML Images">HTML Images</a>
+      <a class="waves-effect waves-light btn-large" href="index.html" title="Retornar à página inicial"><i class="material-icons left">home</i>Página Principal</a>
+      <a class="waves-effect waves-light btn-large" href="images/picture.html" title="HTML Images"><i class="material-icons right">filter</i>HTML Images</a>
     </div>
     <h2 id="myHeader">HTML Images</h2>
 
@@ -40,5 +49,27 @@
     <img src="img/img_chania.jpg" alt="Flowers in Chania">
     <img src="img/img_girl.jpg" alt="Girl in a Jacket">
   </div>
+
+  <ul class="collapsible">
+   <li>
+     <div class="collapsible-header"><i class="material-icons">filter_drama</i>Image Map</div>
+     <div class="collapsible-body"><span>HTML Images Syntax
+In HTML, images are defined with the <img> tag.
+
+The <img> tag is empty, it contains attributes only, and does not have a closing tag.
+
+The src attribute specifies the URL (web address) of the image:.</span></div>
+   </li>
+   <li>
+     <div class="collapsible-header"><i class="material-icons">place</i>Background Images</div>
+     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+   </li>
+   <li>
+     <div class="collapsible-header"><i class="material-icons">whatshot</i>The Picture Element</div>
+     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+   </li>
+ </ul>
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
 </html>
