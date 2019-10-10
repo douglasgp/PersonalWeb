@@ -29,12 +29,6 @@
 
   </head>
   <body>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-   var elems = document.querySelectorAll('.collapsible');
-   var instances = M.Collapsible.init(elems, options);
- });
-    </script>
     <div align="center"><img src="w3schools.png" alt="W3Schools.com" wdth="104" height="142" align="center"></div>
     <div align="center" class="row">
       <a class="waves-effect waves-light btn-large" href="index.html" title="Retornar à página inicial"><i class="material-icons left">home</i>Página Principal</a>
@@ -51,24 +45,21 @@
   </div>
 
   <ul class="collapsible">
-   <li>
-     <div class="collapsible-header"><i class="material-icons">filter_drama</i>Image Map</div>
-     <div class="collapsible-body"><span>HTML Images Syntax
-In HTML, images are defined with the <img> tag.
-
-The <img> tag is empty, it contains attributes only, and does not have a closing tag.
-
-The src attribute specifies the URL (web address) of the image:.</span></div>
-   </li>
-   <li>
-     <div class="collapsible-header"><i class="material-icons">place</i>Background Images</div>
-     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-   </li>
-   <li>
-     <div class="collapsible-header"><i class="material-icons">whatshot</i>The Picture Element</div>
-     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-   </li>
- </ul>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">filter_drama</i>
+      First
+      <span class="new badge">4</span></div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">place</i>
+      Second
+      <span class="badge">1</span></div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+</ul>
 
     <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
