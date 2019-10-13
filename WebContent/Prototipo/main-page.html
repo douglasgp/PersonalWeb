@@ -15,20 +15,16 @@
   <div class="card-panel teal lighten-2"></div>
   <script type="text/javascript">
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.dropdown-trigger');
-      var instances = M.Dropdown.init(elems, options);
-    });
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.tooltipped');
-      var instances = M.Tooltip.init(elems, options);
-    });
+document.addEventListener('DOMContentLoaded', function() {
+var elems = document.querySelectorAll('.dropdown-trigger');
+var instances = M.Dropdown.init(elems, options);
+});
   </script>
   <body>
 
           <nav>
             <div class="nav-wrapper">
-              <a class="brand-logo">Study Management - Login Page</a>
+              <a class="brand-logo">Study Management - Main Page</a>
             </div>
           </nav>
     <div class="container">
@@ -51,27 +47,10 @@
         <div align="center">
           <a align="center" class="waves-effect waves-light btn-large" href="main-page.html" title="Log in to the system">
             <i class="material-icons right">send</i>Log in</a><br><br>
-          <a align="center" href="help-login.html" class="btn tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Log in options</a>
-          <a href="#!" class="btn tooltipped col s4 offset-s4 l2 offset-l1" data-html="true" data-position="bottom" data-tooltip="I am a tooltip">
-          Bottom</a>
+          <a align="center" href="help-login.html" class="waves-effect waves-light">Log in options</a>
         </div>
       </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!--  Scripts-->
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script>if (!window.jQuery) { document.write('<script src="bin/jquery-3.2.1.min.js"><\/script>'); }
-      </script>
-      <script src="docs/js/jquery.timeago.min.js"></script>
-      <script src="docs/js/prism.js"></script>
-      <script src="docs/js/lunr.min.js"></script>
-      <script src="docs/js/search.js"></script>
-      <script src="bin/materialize.js"></script>
-      <script src="docs/js/init.js"></script>
-      <!-- Twitter Button -->
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-
   </body>
 </html>
